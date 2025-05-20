@@ -35,12 +35,12 @@ class NavBar extends StatelessWidget {
           SvgPicture.asset('assets/svgs/ogZod.svg'),
           Row(
             children: [
-              _buildNavItem('Home', 0),
-              _buildNavItem('About', 1),
-              _buildNavItem('Skills', 2),
-              _buildNavItem('Projects', 3),
-              _buildNavItem('Experience', 4),
-              _buildNavItem('Contact', 5),
+              _buildNavItem('Home', 0,context),
+              _buildNavItem('About', 1,context),
+              _buildNavItem('Skills', 2,context),
+              _buildNavItem('Projects', 3,context),
+              _buildNavItem('Experience', 4,context),
+              _buildNavItem('Contact', 5,context),
             ],
           ),
         ],
@@ -69,7 +69,9 @@ class NavBar extends StatelessWidget {
     );
   }
 
-  Widget _buildNavItem(String title, int index) {
+  Widget _buildNavItem(String title, int index, BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
       child: InkWell(
@@ -78,15 +80,26 @@ class NavBar extends StatelessWidget {
           height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
-            color: selectedIndex == index ? AppColors.primary.withOpacity(0.1) : Colors.transparent,
+            color:
+                selectedIndex == index
+                    ? AppColors.primary.withOpacity(0.1)
+                    : Colors.transparent,
             borderRadius: BorderRadius.circular(8),
           ),
           child: Center(
             child: Text(
               title,
               style: TextStyle(
-                color: selectedIndex == index ? AppColors.primary : AppColors.getTextColor(false),
-                fontWeight: selectedIndex == index ? FontWeight.bold : FontWeight.normal,
+                color:
+                    selectedIndex != index
+                        ? AppColors.textMuted
+                        : AppColors.getTextColor(
+                          themeProvider.currentThemeIsDark,
+                        ),
+                fontWeight:
+                    selectedIndex == index
+                        ? FontWeight.bold
+                        : FontWeight.normal,
               ),
             ),
           ),

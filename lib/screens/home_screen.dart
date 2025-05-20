@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_app/functions/get_time_of_day.dart';
+import 'package:my_portfolio_app/widgets/typing_animation.dart';
 import 'dart:math' as math;
 import '../constants/app_colors.dart';
 import '../constants/app_text_styles.dart';
@@ -14,8 +13,7 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen>
-    with TickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _fadeInAnimation;
   late Animation<Offset> _slideAnimation;
@@ -104,9 +102,9 @@ class _HomeScreenState extends State<HomeScreen>
                     Row(
                       children: [
                         Text(
-                          'Flutter Developer',
+                          'Software Engineer',
                           style: AppTextStyles.headerMedium.copyWith(
-                            color: AppColors.primary,
+                            color: AppColors.textMuted,
                             fontSize: 24,
                             fontWeight: FontWeight.w600,
                           ),
@@ -116,13 +114,18 @@ class _HomeScreenState extends State<HomeScreen>
                       ],
                     ),
                     const SizedBox(height: 24),
-                    Text(
-                      'I build beautiful, responsive and feature-rich mobile and web applications that deliver exceptional user experiences.',
+                    TypingAnimation(
                       style: AppTextStyles.body.copyWith(
-                        fontSize: 18,
-                        height: 1.6,
-                        color: Theme.of(context).textTheme.bodyLarge?.color,
-                      ),
+                            fontSize: 18,
+                            height: 1.6,
+                            color: Theme
+                                .of(context)
+                                .textTheme
+                                .bodyLarge
+                                ?.color,
+                          ),
+                      text:
+                          'I build beautiful, responsive and feature-rich mobile and web and desktop applications that deliver exceptional user experiences.',
                     ),
                     const SizedBox(height: 40),
                     Row(
@@ -185,7 +188,7 @@ class _HomeScreenState extends State<HomeScreen>
                     Row(
                       children: [
                         Text(
-                          'Flutter Developer',
+                          'Software Engineer',
                           style: AppTextStyles.headerMedium.copyWith(
                             color: AppColors.primary,
                             fontSize: 20,
@@ -328,7 +331,7 @@ class _HomeScreenState extends State<HomeScreen>
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w500,
-          color: AppColors.primary,
+          color: AppColors.textMuted,
         ),
       ),
     );
