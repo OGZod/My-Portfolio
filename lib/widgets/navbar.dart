@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:svg_flutter/svg.dart';
 import '../constants/app_colors.dart';
+import '../providers/theme_provider.dart';
 import 'responsive_wrapper.dart';
 
 class NavBar extends StatelessWidget {
@@ -21,21 +24,15 @@ class NavBar extends StatelessWidget {
   }
 
   Widget _buildDesktopNavBar(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       height: 80,
       padding: const EdgeInsets.symmetric(horizontal: 40),
-      color: Colors.white,
+      color: AppColors.getBackgroundColor(themeProvider.currentThemeIsDark),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'YourName',
-            style: TextStyle(
-              fontSize: 26,
-              fontWeight: FontWeight.bold,
-              color: AppColors.primary,
-            ),
-          ),
+          SvgPicture.asset('assets/svgs/ogZod.svg'),
           Row(
             children: [
               _buildNavItem('Home', 0),
@@ -52,21 +49,15 @@ class NavBar extends StatelessWidget {
   }
 
   Widget _buildMobileNavBar(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return Container(
       height: 60,
       padding: const EdgeInsets.symmetric(horizontal: 20),
-      color: Colors.white,
+      color: AppColors.getBackgroundColor(themeProvider.currentThemeIsDark),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text(
-            'YourName',
-            style: TextStyle(
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: AppColors.primary,
-            ),
-          ),
+          SvgPicture.asset('assets/svgs/ogZod.svg'),
           IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
@@ -94,7 +85,7 @@ class NavBar extends StatelessWidget {
             child: Text(
               title,
               style: TextStyle(
-                color: selectedIndex == index ? AppColors.primary : AppColors.text,
+                color: selectedIndex == index ? AppColors.primary : AppColors.getTextColor(false),
                 fontWeight: selectedIndex == index ? FontWeight.bold : FontWeight.normal,
               ),
             ),

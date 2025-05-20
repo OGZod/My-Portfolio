@@ -4,20 +4,20 @@ import 'package:flutter/material.dart';
 import 'app_colors.dart';
 
 class AppTextStyles {
-  static const headerLarge = TextStyle(
+  static var headerLarge = TextStyle(
     fontSize: 32.0,
     fontWeight: FontWeight.bold,
-    color: AppColors.text,
+    color: AppColors.getTextColor(false),
   );
   
-  static const headerMedium = TextStyle(
+  static var headerMedium = TextStyle(
     fontSize: 24.0,
     fontWeight: FontWeight.bold,
-    color: AppColors.text,
+    color: AppColors.getTextColor(false),
   );
   
-  static const body = TextStyle(
+  static var body = TextStyle(
     fontSize: 16.0,
-    color: AppColors.text,
+    color: AppColors.getTextColor(false),
   );
 }

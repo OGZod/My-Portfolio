@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../widgets/theme_consumer.dart';
 
-class ContactScreen extends StatelessWidget {
-  const ContactScreen({super.key});
+class ProjectsScreen extends StatelessWidget {
+  const ProjectsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
