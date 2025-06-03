@@ -15,7 +15,13 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
     color: AppColors.getTextColor(false),
   );
-  
+
+  static var headerSmall = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.bold,
+    color: AppColors.getTextColor(false),
+  );
+
   static var body = TextStyle(
     fontSize: 16.0,
     color: AppColors.getTextColor(false),

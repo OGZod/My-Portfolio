@@ -2,18 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:svg_flutter/svg.dart';
 import '../constants/app_colors.dart';
+import '../providers/navigation_provider.dart';
 import '../providers/theme_provider.dart';
 import 'responsive_wrapper.dart';
 
 class NavBar extends StatelessWidget {
-  final int selectedIndex;
   final Function(int) onItemSelected;
 
   const NavBar({
-    Key? key,
-    required this.selectedIndex,
+    super.key,
     required this.onItemSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SvgPicture.asset('assets/svgs/ogZod.svg'),
+          SvgPicture.asset('assets/svgs/ogZod.svg',width: 50,),
           Row(
             children: [
               _buildNavItem('Home', 0,context),
@@ -57,7 +56,7 @@ class NavBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          SvgPicture.asset('assets/svgs/ogZod.svg'),
+          SvgPicture.asset('assets/svgs/ogZod.svg',width: 50,),
           IconButton(
             icon: const Icon(Icons.menu),
             onPressed: () {
@@ -71,6 +70,7 @@ class NavBar extends StatelessWidget {
 
   Widget _buildNavItem(String title, int index, BuildContext context) {
     final themeProvider = Provider.of<ThemeProvider>(context);
+    final nav = Provider.of<NavigationProvider>(context, listen: true);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -81,8 +81,8 @@ class NavBar extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12),
           decoration: BoxDecoration(
             color:
-                selectedIndex == index
-                    ? AppColors.primary.withOpacity(0.1)
+                nav.selectedIndex == index
+                    ? AppColors.primary.withValues(alpha: 0.1)
                     : Colors.transparent,
             borderRadius: BorderRadius.circular(8),
           ),
@@ -91,13 +91,13 @@ class NavBar extends StatelessWidget {
               title,
               style: TextStyle(
                 color:
-                    selectedIndex != index
+                nav.selectedIndex != index
                         ? AppColors.textMuted
                         : AppColors.getTextColor(
                           themeProvider.currentThemeIsDark,
                         ),
                 fontWeight:
-                    selectedIndex == index
+                nav.selectedIndex == index
                         ? FontWeight.bold
                         : FontWeight.normal,
               ),
