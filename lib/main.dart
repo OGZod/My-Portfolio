@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_app/portfolio.dart';
 import 'package:my_portfolio_app/providers/navigation_provider.dart';
+import 'package:my_portfolio_app/providers/projects_provider.dart';
 import 'package:my_portfolio_app/widgets/bug_builder.dart';
 import 'package:provider/provider.dart';
 import 'constants/app_colors.dart';
@@ -19,6 +20,7 @@ void main() {
                     ..initializeKeys(List.generate(6, (_) => GlobalKey())),
         ),
         ChangeNotifierProvider(create: (_) => ThemeProvider()),
+        ChangeNotifierProvider(create: (_) => ProjectsProvider()),
       ],
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, s) => MyApp(),

@@ -1,7 +1,5 @@
-// home_screen.dart
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_app/screens/home/widgets/profile_image_widget.dart';
-import 'package:my_portfolio_app/screens/skills_screen.dart';
 import 'package:provider/provider.dart';
 import '../../constants/app_colors.dart';
 import '../../constants/app_text_styles.dart';
@@ -128,7 +126,7 @@ class _HomeScreenLayout extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 80),
+      padding: const EdgeInsets.symmetric(horizontal: 64),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -221,34 +219,37 @@ class _HomeScreenLayout extends StatelessWidget {
   Widget _buildMobileLayout(BuildContext context, bool isDarkMode) {
     return SingleChildScrollView(
       child: _buildAnimatedContent(
-        child: Column(
-          children: [
-            ProfileImageWidget(
-              size: 180,
-              rotationController: rotationController,
-            ),
-            const SizedBox(height: 40),
-            HeroSection(
-              nameStyle: AppTextStyles.headerLarge.copyWith(
-                fontSize: 36,
-                fontWeight: FontWeight.bold,
-                color: Theme.of(context).textTheme.displayLarge?.color,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            children: [
+              ProfileImageWidget(
+                size: 180,
+                rotationController: rotationController,
               ),
-              titleStyle: AppTextStyles.headerMedium.copyWith(
-                color: AppColors.primary,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
+              const SizedBox(height: 40),
+              HeroSection(
+                nameStyle: AppTextStyles.headerLarge.copyWith(
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).textTheme.displayLarge?.color,
+                ),
+                titleStyle: AppTextStyles.headerMedium.copyWith(
+                  color: AppColors.primary,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                descriptionStyle: AppTextStyles.body.copyWith(
+                  fontSize: 18,
+                  height: 1.6,
+                  color: Theme.of(context).textTheme.bodyLarge?.color,
+                ),
+                showSocialLinks: true,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                isFullWidthButtons: true,
               ),
-              descriptionStyle: AppTextStyles.body.copyWith(
-                fontSize: 18,
-                height: 1.6,
-                color: Theme.of(context).textTheme.bodyLarge?.color,
-              ),
-              showSocialLinks: true,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              isFullWidthButtons: true,
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

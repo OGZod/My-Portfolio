@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_app/providers/navigation_provider.dart';
 import 'package:my_portfolio_app/providers/theme_provider.dart';
-import 'package:my_portfolio_app/screens/about_screen.dart';
-import 'package:my_portfolio_app/screens/contact_screen.dart';
-import 'package:my_portfolio_app/screens/experience_screen.dart';
+import 'package:my_portfolio_app/screens/about/about_screen.dart';
+import 'package:my_portfolio_app/screens/contact/contact_screen.dart';
+import 'package:my_portfolio_app/screens/experience/experience_screen.dart';
 import 'package:my_portfolio_app/screens/home/home_screen.dart';
-import 'package:my_portfolio_app/screens/projects_screen.dart';
-import 'package:my_portfolio_app/screens/skills_screen.dart';
+import 'package:my_portfolio_app/screens/projects/projects_screen.dart';
+import 'package:my_portfolio_app/screens/skills/skills_screen.dart';
 import 'package:my_portfolio_app/widgets/navbar.dart';
 import 'package:my_portfolio_app/widgets/responsive_wrapper.dart';
 import 'package:provider/provider.dart';
