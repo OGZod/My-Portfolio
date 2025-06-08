@@ -198,7 +198,6 @@ class ProjectsScreenLayout extends StatelessWidget {
         categories: ['Mobile', 'All'],
         technologies: ['Flutter', 'Firebase',],
         imageUrl: '',
-        liveUrl: '',
         status: ProjectStatus.archived,
       ),
       ProjectModel(
@@ -209,7 +208,6 @@ class ProjectsScreenLayout extends StatelessWidget {
         categories: ['Web', 'Machine Learning', 'All'],
         technologies: ['Flask', 'Python', 'TensorFlow',],
         imageUrl: '',
-        githubUrl: '',
         status: ProjectStatus.completed,
       ),
       // ProjectModel(

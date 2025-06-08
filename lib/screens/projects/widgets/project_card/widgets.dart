@@ -327,9 +327,8 @@ class ProjectCardImage extends StatelessWidget {
                           ),
                         ),
 
-                      // Status badge
-                      if (project.status == ProjectStatus.inProgress)
                         ProjectStatusBadge(status: project.status),
+
                     ],
                   ),
                 ],
