@@ -13,11 +13,23 @@ class EducationSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return SectionContainer(
       title: 'Education',
-      child: _buildEducationItem(
-        context,
-        'Master of Science in Engineering',
-        'University of Buea, Cameroon',
-        'Advanced coursework in software engineering, systems design, and research methodologies',
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: ResponsiveLayoutConfig(layoutType).gridSpacing,
+        children: [
+          _buildEducationItem(
+            context,
+            'Master of Science in Engineering',
+            'University of Buea, Cameroon',
+            'Advanced coursework in software engineering, systems design, and research methodologies',
+          ),
+          _buildEducationItem(
+            context,
+            'Bachelor of Engineering',
+            'University of Buea, Cameroon',
+            'General coursework in computer engineering, telecommunications, and electronics',
+          ),
+        ],
       ),
     );
   }

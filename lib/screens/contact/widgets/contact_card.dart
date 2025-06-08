@@ -1,5 +1,5 @@
-
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_app/functions/helpers.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_text_styles.dart';
 import 'contact_info.dart';
@@ -16,11 +16,15 @@ class ContactCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width;
     return ScaleTransition(
       scale: cardScaleAnimation,
       child: Container(
         padding: const EdgeInsets.all(32),
-        margin: EdgeInsets.all(32),
+        margin:
+            screenWidth > ResponsiveUtils.mobileBreakpoint
+                ? EdgeInsets.all(32)
+                : EdgeInsets.zero,
         decoration: BoxDecoration(
           color:
               isDarkMode

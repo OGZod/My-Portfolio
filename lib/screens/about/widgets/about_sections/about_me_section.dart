@@ -67,11 +67,14 @@ class AboutMeSection extends StatelessWidget {
     Color color,
   ) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      mainAxisSize: MainAxisSize.min,
       children: [
         Icon(icon, color: color, size: 28),
         const SizedBox(width: 12),
         Text(
           title,
+          softWrap: true,
           style: AppTextStyles.headerSmall.copyWith(
             fontSize: ResponsiveUtils.getTitleFontSize(layoutType),
             fontWeight: FontWeight.w600,
