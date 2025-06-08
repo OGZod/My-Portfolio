@@ -41,7 +41,7 @@ class SocialLinksWidget extends StatelessWidget {
           icon: Icons.email,
           label: 'Email',
           color: iconColor,
-          onTap: () => _handleSocialTap('tangayabah@gmail.com'),
+          onTap: () => _handleSocialTap('obenayuk443@gmail.com'),
         ),
       ],
     );

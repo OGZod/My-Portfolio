@@ -23,11 +23,7 @@ class ProjectCardHeader extends StatelessWidget {
       style: AppTextStyles.headerSmall.copyWith(
         fontSize: config.cardTitleFontSize,
         fontWeight: FontWeight.w600,
-        color: Theme
-            .of(context)
-            .textTheme
-            .displayLarge
-            ?.color,
+        color: Theme.of(context).textTheme.displayLarge?.color,
       ),
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
@@ -71,24 +67,26 @@ class ProjectCardTechnologies extends StatelessWidget {
       spacing: 6,
       runSpacing: 6,
       children:
-      project.technologies.take(3).map((tech) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-          decoration: BoxDecoration(
-            color: AppColors.primary.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
-          ),
-          child: Text(
-            tech,
-            style: AppTextStyles.body.copyWith(
-              fontSize: 12,
-              fontWeight: FontWeight.w500,
-              color: AppColors.primary,
-            ),
-          ),
-        );
-      }).toList(),
+          project.technologies.take(3).map((tech) {
+            return Container(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: AppColors.primary.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(12),
+                border: Border.all(
+                  color: AppColors.primary.withValues(alpha: 0.2),
+                ),
+              ),
+              child: Text(
+                tech,
+                style: AppTextStyles.body.copyWith(
+                  fontSize: 12,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.primary,
+                ),
+              ),
+            );
+          }).toList(),
     );
   }
 }
@@ -160,9 +158,9 @@ class ProjectActionButton extends StatelessWidget {
           color: isPrimary ? AppColors.primary : Colors.transparent,
           borderRadius: BorderRadius.circular(8),
           border:
-          isPrimary
-              ? null
-              : Border.all(color: AppColors.primary.withValues(alpha: 0.5)),
+              isPrimary
+                  ? null
+                  : Border.all(color: AppColors.primary.withValues(alpha: 0.5)),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -195,39 +193,150 @@ class ProjectCardImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 180,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
-        ),
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            AppColors.primary.withValues(alpha: 0.8),
-            AppColors.secondary.withValues(alpha: 0.6),
-          ],
-        ),
-      ),
-      child: Stack(
-        children: [
-          Center(
-            child: Icon(
-              _getProjectIcon(),
-              size: 60,
-              color: Colors.white.withValues(alpha: 0.9),
-            ),
+    // Create a unique key for ScaffoldMessenger to avoid conflicts
+    final scaffoldKey = GlobalKey<ScaffoldMessengerState>();
+
+    return ScaffoldMessenger(
+      key: scaffoldKey,
+      child: Container(
+        height: 180,
+        width: double.infinity,
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(16),
+            topRight: Radius.circular(16),
           ),
-          if (project.status == ProjectStatus.inProgress)
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [
+              AppColors.primary.withValues(alpha: 0.8),
+              AppColors.secondary.withValues(alpha: 0.6),
+            ],
+          ),
+        ),
+        child: Stack(
+          children: [
+            Image.network(
+              project.imageUrl,
+              fit: BoxFit.contain,
+              height: 180,
+              width: double.infinity,
+              errorBuilder: (context, error, stackTrace) {
+                return Center(
+                  child: Icon(
+                    _getProjectIcon(),
+                    size: 60,
+                    color: Colors.white.withValues(alpha: 0.9),
+                  ),
+                );
+              },
+              loadingBuilder: (context, child, loadingProgress) {
+                if (loadingProgress == null) {
+                  // Image is fully loaded, remove any existing SnackBar
+                  WidgetsBinding.instance.addPostFrameCallback((_) {
+                    scaffoldKey.currentState?.removeCurrentSnackBar();
+                  });
+                  return child;
+                }
+                return Center(
+                  child: Icon(
+                    _getProjectIcon(),
+                    size: 60,
+                    color: Colors.white.withValues(alpha: 0.9),
+                  ),
+                );
+              },
+            ),
+            // Top row badges
             Positioned(
               top: 12,
+              left: 12,
               right: 12,
-              child: ProjectStatusBadge(status: project.status),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Company project badge (left side)
+                  if (project.role?.isNotEmpty??false)
+                    Container(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.orange.withValues(alpha: 0.9),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.2),
+                            blurRadius: 4,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Icon(
+                            Icons.business,
+                            size: 12,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(width: 4),
+                          Text(
+                            'Company',
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                  // Right side badges
+                  Row(
+                    children: [
+                      // Role badge
+                      if (project.role != null && project.role!.isNotEmpty)
+                        Container(
+                          margin: const EdgeInsets.only(right: 8),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 8,
+                            vertical: 4,
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.blue.withValues(alpha: 0.9),
+                            borderRadius: BorderRadius.circular(12),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.2),
+                                blurRadius: 4,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
+                          ),
+                          child: Text(
+                            project.role!,
+                            style: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+
+                      // Status badge
+                      if (project.status == ProjectStatus.inProgress)
+                        ProjectStatusBadge(status: project.status),
+                    ],
+                  ),
+                ],
+              ),
             ),
-        ],
+          ],
+        ),
       ),
     );
   }

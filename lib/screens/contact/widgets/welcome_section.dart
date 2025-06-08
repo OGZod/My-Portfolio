@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import '../../../constants/app_colors.dart';
 import '../../../constants/app_text_styles.dart';
 import '../../../functions/helpers.dart';
@@ -89,6 +90,10 @@ class WelcomeSection extends StatelessWidget {
             ],
           ),
         ),
+        Lottie.asset(
+          'assets/animations/laptop.json',
+          height: 300
+        )
       ],
     );
   }

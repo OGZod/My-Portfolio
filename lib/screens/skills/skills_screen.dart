@@ -50,12 +50,46 @@ class SkillsScreen extends StatelessWidget {
 
   Widget _buildSkillsGrid(bool isDarkMode) {
     final skills = [
-      Skill(name: 'Flutter', percentage: 90),
-      Skill(name: 'Dart', percentage: 85),
-      Skill(name: 'UI/UX Design', percentage: 80),
-      Skill(name: 'React Native', percentage: 70),
-      Skill(name: 'Firebase', percentage: 75),
-      Skill(name: 'State Management', percentage: 85),
+      Skill(
+        name: 'Mobile Development',
+        tools: [
+          'Flutter',
+          'Dart',
+          'Firebase'
+              'Spring Boot',
+          'NodeJs',
+          'MySQL',
+          'PostgreSQL',
+        ],
+      ),
+      Skill(
+        name: 'Web Development',
+        tools: [
+          'Flutter',
+          'HTML & CSS',
+          'JavaScript',
+          'React',
+          'TypeScript',
+          'NextJs'
+              'Blazor',
+          '.NET',
+          'Python',
+          'Flask',
+        ],
+      ),
+      Skill(name: 'UI/UX Design', tools: ['Figma']),
+      Skill(
+        name: 'Desktop Development',
+        tools: ['Flutter', 'Winforms', 'WPF', 'JavaFx', 'C#'],
+      ),
+      Skill(
+        name: 'Desktop Development',
+        tools: ['Flutter', 'Winforms', 'WPF', 'JavaFx', 'C#'],
+      ),
+      Skill(
+        name: 'Machine Learning',
+        tools: ['Python', 'Google Colab', 'Jupyter Notebook',],
+      ),
     ];
 
     return Wrap(

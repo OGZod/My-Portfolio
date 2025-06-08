@@ -1,10 +1,10 @@
 
 class Skill {
   final String name;
-  final int percentage;
+  final List<String> tools;
 
   Skill({
     required this.name,
-    required this.percentage,
+    required this.tools,
   });
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:my_portfolio_app/providers/navigation_provider.dart';
 import 'package:my_portfolio_app/providers/theme_provider.dart';
 import 'package:my_portfolio_app/screens/about/about_screen.dart';
@@ -22,21 +23,18 @@ class PortfolioApp extends StatefulWidget {
 }
 
 class _PortfolioAppState extends State<PortfolioApp> {
-
   final _scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
-    final nav = Provider.of<NavigationProvider>(context,);
+    final nav = Provider.of<NavigationProvider>(context);
 
     return Consumer<ThemeProvider>(
       builder: (BuildContext context, themeProvider, Widget? child) {
         return Scaffold(
           body: Column(
             children: [
-              NavBar(
-                onItemSelected: (index) => _onItemSelected(index,),
-              ),
+              NavBar(onItemSelected: (index) => _onItemSelected(index)),
               Expanded(
                 child: SingleChildScrollView(
                   controller: _scrollController,
@@ -55,47 +53,46 @@ class _PortfolioAppState extends State<PortfolioApp> {
             ],
           ),
           endDrawer:
-          ResponsiveWrapper.isMobile(context) ||
-              ResponsiveWrapper.isTablet(context)
-              ? Drawer(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                DrawerHeader(
-                  decoration: BoxDecoration(
-                    color: AppColors.getBackgroundColor(
-                      themeProvider.currentThemeIsDark,
+              ResponsiveWrapper.isMobile(context) ||
+                      ResponsiveWrapper.isTablet(context)
+                  ? Drawer(
+                    child: ListView(
+                      padding: EdgeInsets.zero,
+                      children: [
+                        DrawerHeader(
+                          decoration: BoxDecoration(
+                            color: AppColors.getBackgroundColor(
+                              themeProvider.currentThemeIsDark,
+                            ),
+                          ),
+                          child: Lottie.asset(
+                            'assets/animations/astronaut.json',
+                          ),
+                        ),
+                        _buildDrawerItem('Home', 0),
+                        _buildDrawerItem('About', 1),
+                        _buildDrawerItem('Skills', 2),
+                        _buildDrawerItem('Projects', 3),
+                        _buildDrawerItem('Experience', 4),
+                        _buildDrawerItem('Contact', 5),
+                        const Divider(),
+                        _buildThemeToggle(),
+                      ],
                     ),
-                  ),
-                  child: SvgPicture.asset('assets/images/og.png'),
-                ),
-                _buildDrawerItem('Home', 0,),
-                _buildDrawerItem('About', 1,),
-                _buildDrawerItem('Skills', 2, ),
-                _buildDrawerItem('Projects', 3, ),
-                _buildDrawerItem('Experience', 4, ),
-                _buildDrawerItem('Contact', 5, ),
-                const Divider(),
-                _buildThemeToggle(),
-              ],
-            ),
-          )
-              : null,
+                  )
+                  : null,
         );
       },
     );
   }
 
-  Widget _buildDrawerItem(
-    String title,
-    int index,
-  ) {
+  Widget _buildDrawerItem(String title, int index) {
     final nav = Provider.of<NavigationProvider>(context, listen: true);
     return ListTile(
       title: Text(title),
       selected: nav.selectedIndex == index,
       onTap: () {
-        _onItemSelected(index,);
+        _onItemSelected(index);
         Navigator.pop(context);
       },
     );
@@ -131,9 +128,8 @@ class _PortfolioAppState extends State<PortfolioApp> {
     );
   }
 
-  void _onItemSelected(int index, ) {
+  void _onItemSelected(int index) {
     final nav = Provider.of<NavigationProvider>(context, listen: false);
     nav.setSelectedIndex(index);
-
   }
 }

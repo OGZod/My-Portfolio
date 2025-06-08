@@ -144,15 +144,62 @@ class ProjectsScreenLayout extends StatelessWidget {
   List<ProjectModel> _getAllProjects() {
     return [
       ProjectModel(
+        title: 'AssesFlow',
+        description:
+        'Comprehensive desktop application for managing student records,'
+            ' course scheduling, and academic workflows',
+        categories: ['UI/UX', 'Web', 'All','Mobile','Desktop'],
+        technologies: ['Figma', 'Flutter', 'Spring Boot',],
+        imageUrl: '',
+        githubUrl: 'https://github.com/OGZod/AssessFlow',
+        status: ProjectStatus.inProgress,
+      ),
+      ProjectModel(
+        title: 'BakeEat',
+        description:
+        'A social application aimed at promoting pastries by creating fun environment'
+            ' wherein pastry makers can share their work and get engagements from clients easily.',
+        categories: ['UI/UX', 'Web', 'All','Mobile','Desktop'],
+        technologies: ['Figma', 'Flutter', 'Firebase'],
+        imageUrl: '',
+        githubUrl: 'https://github.com/OGZod/BakeEat_Mobile',
+        status: ProjectStatus.inProgress,
+      ),
+      ProjectModel(
+          title: 'Buzme',
+          description:
+          'Buzme is Africa\'s trusted online marketplace featuring secure '
+              'escrow payments, business tools, and logistics.'
+              ' Buy safely and sell confidently.',
+          categories: ['Mobile', 'All'],
+          technologies: ['Flutter', 'Firebase', 'NodeJS'],
+          imageUrl: '',
+          status: ProjectStatus.completed,
+          role: 'Fullstack developer',
+          liveUrl: 'https://play.google.com/store/apps/details?id=com.dohtechsolutions.buzme'
+      ),
+      ProjectModel(
+        title: 'Buzsmart',
+        description:
+        'Buzsmart is a revolutionary marketplace that bridges the gap between'
+            ' people living abroad and the authentic tastes of their home countries. '
+            'We connect you with local stores that stock.',
+        categories: ['All', 'Mobile'],
+        technologies: ['Flutter', 'TypeScript', 'PostgreSQL'],
+        imageUrl: 'assets/images/project5.png',
+        role: 'Frontend developer',
+        status: ProjectStatus.inProgress,
+      ),
+      ProjectModel(
         title: 'Ajuoza',
         description:
             'Ajuoza Is the App to find your lost love ones and your important documents.'
                 ' It also help you to secure your family members and check if your important document is already available at the police',
         categories: ['Mobile', 'All'],
         technologies: ['Flutter', 'Firebase',],
-        imageUrl: 'https://th.bing.com/th/id/OIP.E3S9mcNaXkD-4PuTPKnFdAAAAA?w=129&h=150&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3.png',
+        imageUrl: '',
         liveUrl: '',
-        status: ProjectStatus.completed,
+        status: ProjectStatus.archived,
       ),
       ProjectModel(
         title: 'Binary Segmentation of Echocardiograms',
@@ -165,52 +212,16 @@ class ProjectsScreenLayout extends StatelessWidget {
         githubUrl: '',
         status: ProjectStatus.completed,
       ),
-      ProjectModel(
-        title: 'Verified DNA - Vedna mobile app',
-        description:
-            'Comprehensive desktop application for managing student records, course scheduling, and academic workflows.',
-        categories: ['Desktop', 'All'],
-        technologies: ['Flutter', 'Spring Boot', 'MySQL',],
-        imageUrl: '',
-        githubUrl: 'https://github.com/OGZod/vedna_app',
-        status: ProjectStatus.completed,
-      ),
-      ProjectModel(
-        title: 'Buzme',
-        description:
-            'Buzme is Africa\'s trusted online marketplace featuring secure '
-                'escrow payments, business tools, and logistics.'
-                ' Buy safely, sell confidently, and manage your business efficiently',
-        categories: ['Mobile', 'All'],
-        technologies: ['Flutter', 'Dart', 'Firebase', 'NodeJS'],
-        imageUrl: 'https://play-lh.googleusercontent.com/Ut-PvSsA4dDrijhPLUKgvRY7ZWWSlyQsvBoGzs1bVhGODTOdbr5vd6cf75cLIZpju6w=w5120-h2880-rw.png',
-        status: ProjectStatus.completed,
-        role: 'Fullstack developer',
-        liveUrl: 'https://play.google.com/store/apps/details?id=com.dohtechsolutions.buzme'
-      ),
-      ProjectModel(
-        title: 'Buzsmart',
-        description:
-            'Buzsmart is a revolutionary marketplace that bridges the gap between'
-                ' people living abroad and the authentic tastes of their home countries. '
-                'We connect you with local stores that stock.',
-        categories: ['All', 'Mobile'],
-        technologies: ['Flutter', 'TypeScript', 'PostgreSQL'],
-        imageUrl: 'assets/images/project5.png',
-        role: 'Frontend developer',
-        status: ProjectStatus.inProgress,
-      ),
-      ProjectModel(
-        title: 'AssesFlow',
-        description:
-            'An Application for easy student assessment.',
-        categories: ['UI/UX', 'Web', 'All','Mobile','Desktop'],
-        technologies: ['Figma', 'Flutter', 'Spring Boot', 'Java','Dart','Firebase'],
-        imageUrl: '',
-        role: 'Co-founder',
-        githubUrl: 'https://github.com/OGZod/AssessFlow',
-        status: ProjectStatus.inProgress,
-      ),
+      // ProjectModel(
+      //   title: 'Verified DNA - Vedna mobile app',
+      //   description:
+      //       '.',
+      //   categories: ['Desktop', 'All'],
+      //   technologies: ['Flutter', 'Spring Boot', 'MySQL',],
+      //   imageUrl: '',
+      //   githubUrl: 'https://github.com/OGZod/vedna_app',
+      //   status: ProjectStatus.completed,
+      // ),
     ];
   }
 }

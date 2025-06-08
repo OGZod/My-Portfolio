@@ -24,7 +24,8 @@ class ExperienceScreen extends StatelessWidget {
           color: AppColors.getBackgroundColor(isDarkMode),
           child: Column(
             crossAxisAlignment: config.headerAlignment,
-            mainAxisSize: MainAxisSize.min, // Important to prevent infinite height
+            mainAxisSize: MainAxisSize.min,
+            // Important to prevent infinite height
             children: [
               Text(
                 'My Experience',
@@ -46,22 +47,46 @@ class ExperienceScreen extends StatelessWidget {
   Widget _buildExperienceTimeline(bool isDarkMode) {
     final experiences = [
       Experience(
-        position: 'Senior Flutter Developer',
-        company: 'Tech Innovations Inc.',
+        position: 'Part-time Lecturer',
+        company: 'HIBES, Buea',
+        period: '2024 - Present',
+        description:
+            'Deliver engaging lectures on engineering-related courses, guiding students in understanding complex concepts and applying practical skills in technology and development.',
+      ),
+      Experience(
+        position: 'Part-time Lecturer',
+        company: 'DEX University, Limbe',
+        period: '2024 - Present',
+        description:
+            'Teach engineering-related courses, fostering critical thinking and problem-solving skills in students through hands-on projects and theoretical instruction.',
+      ),
+      Experience(
+        position: 'Fullstack Developer',
+        company: 'Dohtech Solutions, Remote',
         period: '2023 - Present',
-        description: 'Leading the mobile development team in creating cross-platform applications. Implemented CI/CD pipelines and improved app performance by 40%.',
+        description:
+            'Contribute to mobile and web applications like Buzme, an e-commerce platform available on Play Store and App Store, enhancing functionality and user experience.',
       ),
       Experience(
-        position: 'Flutter Developer',
-        company: 'Mobile Solutions Ltd.',
-        period: '2021 - 2023',
-        description: 'Developed and maintained multiple Flutter applications. Collaborated with design and backend teams to deliver high-quality products.',
+        position: 'Part-time Lecturer',
+        company: 'TRUSTECH University, Buea',
+        period: '2024 - 2025',
+        description:
+        'Instructed students in engineering disciplines, emphasizing real-world applications and innovative approaches to technology and system design.',
       ),
       Experience(
-        position: 'Junior Mobile Developer',
-        company: 'StartUp Ventures',
-        period: '2019 - 2021',
-        description: 'Started as an intern and progressed to a full-time position. Worked on various projects using Flutter and React Native.',
+        position: 'Part-time Lecturer',
+        company: 'VHIT, Buea',
+        period: '2023 - 2024',
+        description:
+            'Led lectures in General Mathematics, equipping students with foundational knowledge for mathematical reasoning.',
+      ),
+      Experience(
+        position: 'Mobile Developer',
+        company: 'Ajuoza, Remote',
+        period: '2023 - Present',
+        description:
+            'Volunteered as a Flutter developer, making significant contributions to mobile applications like Ajuoza mobile application, improving features, performance, and user interface design.',
       ),
     ];
 
