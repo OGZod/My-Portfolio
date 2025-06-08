@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
-import 'dart:developer';
+import 'package:my_portfolio_app/functions/helpers.dart';
 import 'contact_item.dart';
 
 class ContactInfo extends StatelessWidget {
@@ -9,18 +8,6 @@ class ContactInfo extends StatelessWidget {
 
   const ContactInfo({super.key, required this.isDarkMode});
 
-  Future<void> _launchUrl(String url) async {
-    final Uri uri = Uri.parse(url);
-    try {
-      if (await canLaunchUrl(uri)) {
-        await launchUrl(uri, mode: LaunchMode.externalApplication);
-      } else {
-        log('Could not launch $url');
-      }
-    } catch (e) {
-      log('Error launching $url');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +68,7 @@ class ContactInfo extends StatelessWidget {
                         value: contact['value'] as String,
                         subtitle: contact['subtitle'] as String,
                         iconColor: contact['color'] as Color,
-                        onTap: () => _launchUrl(contact['url'] as String),
+                        onTap: () => handleSocialTap(contact['url'] as String),
                         isDarkMode: isDarkMode,
                       ),
                     ),

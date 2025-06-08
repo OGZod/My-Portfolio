@@ -1,4 +1,8 @@
+import 'dart:developer';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 enum LayoutType { mobile, tablet, desktop }
 
@@ -211,4 +215,27 @@ class ResponsiveLayoutConfig {
       layoutType == LayoutType.mobile
           ? WrapAlignment.center
           : WrapAlignment.start;
+}
+
+void handleSocialTap(String url) async {
+  if (url.toLowerCase().contains('gmail')) {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: url, // Replace with your email
+    );
+
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      if (kDebugMode) {
+        print('Could not launch email composer');
+      }
+    }
+  } else {
+    if (url.isNotEmpty && await canLaunchUrl(Uri.parse(url))) {
+      await launchUrl(Uri.parse(url), mode: LaunchMode.externalApplication);
+    } else {
+      log('Could not launch $url');
+    }
+  }
 }

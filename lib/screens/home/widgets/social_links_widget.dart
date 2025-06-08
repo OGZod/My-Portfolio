@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -57,7 +58,9 @@ class SocialLinksWidget extends StatelessWidget {
       if (await canLaunchUrl(emailLaunchUri)) {
         await launchUrl(emailLaunchUri);
       } else {
-        print('Could not launch email composer');
+        if (kDebugMode) {
+          print('Could not launch email composer');
+        }
       }
     } else {
       if (url.isNotEmpty && await canLaunchUrl(Uri.parse(url))) {
