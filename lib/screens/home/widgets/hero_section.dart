@@ -53,6 +53,7 @@ class HeroSection extends StatelessWidget {
         SizedBox(height: isCentered ? 24 : 24),
         TypingAnimation(
           style: descriptionStyle,
+          isCentered: isCentered,
           text: 'I build beautiful, responsive and feature-rich mobile and web and desktop applications that deliver exceptional user experiences.',
         ),
         SizedBox(height: isCentered ? 32 : 40),

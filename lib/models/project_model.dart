@@ -8,6 +8,7 @@ class ProjectModel {
   final String? githubUrl;
   final String? liveUrl;
   final ProjectStatus status;
+  final String? role;
 
   ProjectModel({
     required this.title,
@@ -17,6 +18,7 @@ class ProjectModel {
     required this.imageUrl,
     this.githubUrl,
     this.liveUrl,
+    this.role,
     required this.status,
   });
 

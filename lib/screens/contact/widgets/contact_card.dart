@@ -20,6 +20,7 @@ class ContactCard extends StatelessWidget {
       scale: cardScaleAnimation,
       child: Container(
         padding: const EdgeInsets.all(32),
+        margin: EdgeInsets.all(32),
         decoration: BoxDecoration(
           color:
               isDarkMode

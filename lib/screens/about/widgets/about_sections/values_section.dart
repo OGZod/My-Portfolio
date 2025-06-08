@@ -62,7 +62,7 @@ class ValuesSection extends StatelessWidget {
         Text(
           'Impact Through Code & Education',
           style: AppTextStyles.headerSmall.copyWith(
-            fontSize: ResponsiveUtils.getTitleFontSize(layoutType),
+            fontSize: ResponsiveUtils.getSmallTitleFontSize(layoutType),
             fontWeight: FontWeight.w600,
             color: AppColors.primary,
           ),

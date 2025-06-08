@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio_app/screens/experience/widgets/experience_item.dart';
 import '../../constants/app_colors.dart';
+import '../../functions/helpers.dart';
 import '../../models/experience.dart';
 import '../../widgets/theme_consumer.dart';
 
@@ -10,6 +11,8 @@ class ExperienceScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = ResponsiveUtils.getConfig(MediaQuery.of(context).size.width);
+
     return ThemeConsumer(
       builder: (context, isDarkMode) {
         return Container(
@@ -17,16 +20,16 @@ class ExperienceScreen extends StatelessWidget {
             minHeight: 500, // Set a minimum height to prevent layout issues
           ),
           width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
+          padding: config.screenPadding,
           color: AppColors.getBackgroundColor(isDarkMode),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: config.headerAlignment,
             mainAxisSize: MainAxisSize.min, // Important to prevent infinite height
             children: [
               Text(
                 'My Experience',
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: config.headerFontSize,
                   fontWeight: FontWeight.bold,
                   color: AppColors.getTextColor(isDarkMode),
                 ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_app/screens/projects/widgets/projects_layout.dart';
+import '../../../functions/helpers.dart';
 import '../../../models/project_model.dart';
-import '../widgets/project_card.dart';
+import 'project_card/project_card.dart';
 
 class ProjectsGrid extends StatelessWidget {
   final List<ProjectModel> projects;

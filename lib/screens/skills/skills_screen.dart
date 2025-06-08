@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio_app/functions/helpers.dart';
 import 'package:my_portfolio_app/screens/skills/widgets/skill_card.dart';
+import 'package:my_portfolio_app/widgets/header_underline.dart';
 import '../../constants/app_colors.dart';
 import '../../models/skill.dart';
 import '../../widgets/theme_consumer.dart';
@@ -9,6 +11,7 @@ class SkillsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final config = ResponsiveUtils.getConfig(MediaQuery.of(context).size.width);
     return ThemeConsumer(
       builder: (context, isDarkMode) {
         return Container(
@@ -16,20 +19,26 @@ class SkillsScreen extends StatelessWidget {
             minHeight: 500, // Set a minimum height to prevent layout issues
           ),
           width: double.infinity,
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 60),
+          padding: config.screenPadding,
           color: AppColors.getBackgroundColor(isDarkMode),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min, // Important to prevent infinite height
+            crossAxisAlignment: config.headerAlignment,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 'My Skills',
+                textAlign: config.headerTextAlign,
                 style: TextStyle(
-                  fontSize: 32,
+                  fontSize: ResponsiveUtils.getTitleFontSize(
+                    ResponsiveUtils.getLayoutType(
+                      MediaQuery.of(context).size.width,
+                    ),
+                  ),
                   fontWeight: FontWeight.bold,
                   color: AppColors.getTextColor(isDarkMode),
                 ),
               ),
+              HeaderUnderline(),
               const SizedBox(height: 40),
               _buildSkillsGrid(isDarkMode),
             ],
@@ -52,7 +61,10 @@ class SkillsScreen extends StatelessWidget {
     return Wrap(
       spacing: 20,
       runSpacing: 20,
-      children: skills.map((skill) => SkillCard(skill: skill, isDarkMode: isDarkMode)).toList(),
+      children:
+          skills
+              .map((skill) => SkillCard(skill: skill, isDarkMode: isDarkMode))
+              .toList(),
     );
   }
 }

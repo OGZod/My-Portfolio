@@ -1,17 +1,18 @@
-
 import 'package:flutter/material.dart';
 import 'dart:async';
 
 class TypingAnimation extends StatefulWidget {
   final String text;
   final TextStyle style;
+  final bool isCentered;
   final Duration duration;
-  
+
   const TypingAnimation({
     super.key,
     required this.text,
     this.style = const TextStyle(),
     this.duration = const Duration(milliseconds: 40),
+    required this.isCentered,
   });
 
   @override
@@ -22,13 +23,13 @@ class _TypingAnimationState extends State<TypingAnimation> {
   String _displayText = '';
   int _characterCount = 0;
   late Timer _timer;
-  
+
   @override
   void initState() {
     super.initState();
     _startTyping();
   }
-  
+
   void _startTyping() {
     _timer = Timer.periodic(widget.duration, (timer) {
       setState(() {
@@ -41,18 +42,19 @@ class _TypingAnimationState extends State<TypingAnimation> {
       });
     });
   }
-  
+
   @override
   void dispose() {
     _timer.cancel();
     super.dispose();
   }
-  
+
   @override
   Widget build(BuildContext context) {
     return Text(
       _displayText,
       style: widget.style,
+      textAlign: widget.isCentered ? TextAlign.center : TextAlign.start,
     );
   }
 }

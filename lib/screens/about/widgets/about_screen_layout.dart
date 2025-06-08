@@ -5,7 +5,7 @@ import 'about_animations.dart';
 import 'about_sections/about_me_section.dart';
 import 'about_sections/education_section.dart';
 import 'about_sections/values_section.dart';
-import 'animated_header.dart';
+import '../../../widgets/animated_header.dart';
 import 'animated_section_wrapper.dart';
 
 class AboutScreenLayout extends StatelessWidget {
@@ -34,12 +34,13 @@ class AboutScreenLayout extends StatelessWidget {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 40),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: ResponsiveLayoutConfig(layoutType).headerAlignment,
         children: [
           AnimatedHeader(
             layoutType: layoutType,
             fadeInAnimation: animations.fadeInAnimation,
             slideAnimation: animations.slideAnimation,
+            title: 'About Me',
           ),
           const SizedBox(height: 60),
           Row(
@@ -95,6 +96,7 @@ class AboutScreenLayout extends StatelessWidget {
             layoutType: layoutType,
             fadeInAnimation: animations.fadeInAnimation,
             slideAnimation: animations.slideAnimation,
+            title: 'About Me',
           ),
           const SizedBox(height: 50),
           ...List.generate(
@@ -116,12 +118,13 @@ class AboutScreenLayout extends StatelessWidget {
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: ResponsiveLayoutConfig(layoutType).headerAlignment,
         children: [
           AnimatedHeader(
             layoutType: layoutType,
             fadeInAnimation: animations.fadeInAnimation,
             slideAnimation: animations.slideAnimation,
+            title: 'About Me',
           ),
           const SizedBox(height: 40),
           ...List.generate(

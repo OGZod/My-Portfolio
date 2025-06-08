@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import '../../../constants/app_colors.dart';
-import '../../../constants/app_text_styles.dart';
-import '../../../functions/helpers.dart';
+import '../constants/app_text_styles.dart';
+import '../functions/helpers.dart';
+import 'header_underline.dart';
 
 class AnimatedHeader extends StatelessWidget {
   final LayoutType layoutType;
   final Animation<double> fadeInAnimation;
   final Animation<Offset> slideAnimation;
+  final String title;
 
   const AnimatedHeader({
     super.key,
     required this.layoutType,
     required this.fadeInAnimation,
-    required this.slideAnimation,
+    required this.slideAnimation, required this.title,
+
   });
 
   @override
@@ -28,7 +30,7 @@ class AnimatedHeader extends StatelessWidget {
                   : CrossAxisAlignment.start,
           children: [
             Text(
-              'About Me',
+              title,
               style: AppTextStyles.headerLarge.copyWith(
                 fontSize: _getHeaderFontSize(),
                 fontWeight: FontWeight.bold,
@@ -40,16 +42,7 @@ class AnimatedHeader extends StatelessWidget {
                       : TextAlign.left,
             ),
             const SizedBox(height: 12),
-            Container(
-              width: 60,
-              height: 4,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [AppColors.primary, AppColors.secondary],
-                ),
-                borderRadius: BorderRadius.circular(2),
-              ),
-            ),
+            HeaderUnderline(),
           ],
         ),
       ),
