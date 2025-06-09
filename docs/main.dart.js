@@ -23198,13 +23198,13 @@ afb:function afb(a){this.a=a},
 as7(a){if(a<650)return B.aG
 else if(a<1100)return B.fk
 else return B.fl},
-as8(a){switch(a.a){case 0:return 32
+axv(a){switch(a.a){case 0:return 32
 case 1:return 40
 case 2:return 48}},
 Nd(a){switch(a.a){case 0:return 16
 case 1:return 17
 case 2:return 18}},
-axv(a){switch(a.a){case 0:return 16
+as8(a){switch(a.a){case 0:return 16
 case 1:return 17
 case 2:return 18}},
 aKg(a){switch(a.a){case 0:return 14
@@ -79799,7 +79799,7 @@ return A.bD(b,s,s,s,r.jX(p==null?s:p.b,q,1.7),s)}}
 A.y4.prototype={
 I(a){var s="University of Buea, Cameroon",r=new A.hP(this.c).gyw()
 return new A.qb("Education",A.ca(A.a([this.Iv(a,"Master of Science in Engineering",s,"Advanced coursework in software engineering, systems design, and research methodologies"),this.Iv(a,"Bachelor of Engineering",s,"General coursework in computer engineering, telecommunications, and electronics")],t.p),B.L,B.u,B.r,r),null)},
-Iv(a,b,c,d){var s=null,r=A.a0(a),q=A.cH(12),p=A.f6(A.a0(a).ch.aq(0.1),-1,1),o=this.c,n=A.bD(b,s,s,s,$.Gs().cY(B.t,A.as8(o),B.an),s),m=$.eK(),l=A.Nd(o),k=A.a0(a).ok.y
+Iv(a,b,c,d){var s=null,r=A.a0(a),q=A.cH(12),p=A.f6(A.a0(a).ch.aq(0.1),-1,1),o=this.c,n=A.bD(b,s,s,s,$.Gs().cY(B.t,A.axv(o),B.an),s),m=$.eK(),l=A.Nd(o),k=A.a0(a).ok.y
 return A.bu(s,A.ca(A.a([n,B.h8,A.bD(c,s,s,s,m.cY(k==null?s:k.b,l,B.a6),s),B.h7,A.bD(d,s,s,s,$.eK().jX(B.b4,A.Nd(o)-1,1.5),s)],t.p),B.L,B.u,B.r,0),B.n,s,s,new A.bn(r.at,s,p,q,s,s,B.F),s,s,s,B.f7,s,s,s)}}
 A.Aj.prototype={
 I(a){return new A.qb("My Philosophy",A.ca(A.a([this.zl(a,B.Hq,"Innovation Through Quality","I believe that exceptional software emerges from the intersection of technical excellence and creative problem-solving. Every project is an opportunity to push boundaries while maintaining the highest standards of quality."),B.bI,this.zl(a,B.Hp,"Knowledge Multiplier","Teaching has taught me that the greatest impact comes from empowering others. Whether mentoring students or collaborating with teams, I strive to be a catalyst for growth and learning."),B.bI,this.zl(a,B.Ht,"Continuous Evolution","Technology evolves rapidly, and so must we. I'm committed to lifelong learning, staying current with emerging technologies, and adapting to new challenges with enthusiasm and expertise.")],t.p),B.w,B.u,B.r,0),null)},
@@ -79807,13 +79807,13 @@ zl(a,b,c,d){var s,r,q,p,o=null,n=A.a0(a),m=A.cH(12),l=A.f6(A.a0(a).ch.aq(0.1),-1
 j=A.bu(o,A.ie(b,B.t,o,24),B.n,o,o,new A.bn(k,o,o,j,o,o,B.F),o,o,o,B.f6,o,o,o)
 k=$.Gs()
 s=this.c
-r=A.axv(s)
+r=A.as8(s)
 q=A.a0(a).ok.a
 p=t.p
 return A.bu(o,A.df(A.a([j,B.em,A.e0(A.ca(A.a([A.bD(c,o,o,o,k.cY(q==null?o:q.b,r,B.an),o),B.h8,A.bD(d,o,o,o,$.eK().jX(B.b4,A.aKg(s),1.6),o)],p),B.L,B.u,B.r,0),1)],p),B.L,B.u,B.r),B.n,o,o,new A.bn(n.at,o,l,m,o,o,B.F),o,o,o,B.f7,o,o,o)}}
 A.CF.prototype={
 I(a){var s,r,q,p=null,o=A.a([A.a0(a).at,A.a0(a).at.aq(0.8)],t.W),n=A.cH(16),m=A.f6(A.a0(a).ch.aq(0.1),-1,1),l=B.t.aq(0.1),k=A.cH(8),j=this.c,i=t.p
-k=A.df(A.a([A.bu(p,A.ie(B.Ho,B.t,p,20),B.n,p,p,new A.bn(l,p,p,k,p,p,B.F),p,p,p,B.mG,p,p,p),B.h6,A.bD("Impact Through Code & Education",p,p,p,$.Gs().cY(B.t,A.axv(j),B.an),p)],i),B.w,B.u,B.r)
+k=A.df(A.a([A.bu(p,A.ie(B.Ho,B.t,p,20),B.n,p,p,new A.bn(l,p,p,k,p,p,B.F),p,p,p,B.mG,p,p,p),B.h6,A.bD("Impact Through Code & Education",p,p,p,$.Gs().cY(B.t,A.as8(j),B.an),p)],i),B.w,B.u,B.r)
 l=$.eK()
 s=A.Nd(j)
 r=A.a0(a).ok.y
@@ -80409,7 +80409,7 @@ $2(a,b){var s,r,q=null,p=this.b,o=p.gGE(),n=b?B.cJ:B.cI
 p=p.a===B.aG
 s=p?B.w:B.L
 p=p?B.bL:B.bK
-r=A.as8(A.as7(A.c3(a,q,t.w).w.a.a))
+r=A.axv(A.as7(A.c3(a,q,t.w).w.a.a))
 return A.bu(q,A.ca(A.a([A.bD("My Skills",q,q,q,A.dB(q,q,b?B.cK:B.bw,q,q,q,q,q,q,q,q,r,q,q,B.ao,q,q,!0,q,q,q,q,q,q,q,q),p),new A.yI(q),B.bn,this.a.a_9(b)],t.p),s,B.u,B.co,0),B.n,n,B.la,q,q,q,q,o,q,q,1/0)},
 $S:165}
 A.ae8.prototype={
