@@ -28043,7 +28043,7 @@ return n}}
 A.aow.prototype={
 $1(a){var s=A.eI().b
 s=s==null?null:s.canvasKitBaseUrl
-return(s==null?"https://www.gstatic.com/flutter-canvaskit/109150893958777c8f2215f6cfd3e89e984e8dea/":s)+a},
+return(s==null?"https://www.gstatic.com/flutter-canvaskit/31c4875c7aa0079ae11a4850e2d06bd83d001960/":s)+a},
 $S:98}
 A.Hu.prototype={
 c5(a,b){var s,r=this.a
@@ -80068,7 +80068,7 @@ q=A.bD("Software Engineer",n,n,n,o.d,n)
 p=t.p
 r=A.df(A.a([q,A.hS(n,n,l?8:16),new A.wQ(n)],p),B.w,r,B.r)
 q=A.hS(n,24,n)
-k=A.a([new A.JJ(n),k,j,s,r,q,new A.CA("I build beautiful, responsive and feature-rich mobile and web and desktop applications that deliver exceptional user experiences.",o.e,l,n),A.hS(n,l?32:40,n),new A.GN(o.w,l,n)],p)
+k=A.a([new A.JJ(n),k,j,s,r,q,new A.CA("I build beautiful, responsive and feature-rich mobile, web and desktop applications that deliver exceptional user experiences.",o.e,l,n),A.hS(n,l?32:40,n),new A.GN(o.w,l,n)],p)
 j=A.hS(n,l?40:60,n)
 B.b.E(k,A.a([j,new A.Oz(l?B.bl:B.u,n)],p))
 return A.ca(k,m,B.bl,B.r,0)}}
