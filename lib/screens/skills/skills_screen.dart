@@ -55,8 +55,8 @@ class SkillsScreen extends StatelessWidget {
         tools: [
           'Flutter',
           'Dart',
-          'Firebase'
-              'Spring Boot',
+          'Firebase',
+          'Spring Boot',
           'NodeJs',
           'MySQL',
           'PostgreSQL',
@@ -70,8 +70,8 @@ class SkillsScreen extends StatelessWidget {
           'JavaScript',
           'React',
           'TypeScript',
-          'NextJs'
-              'Blazor',
+          'NextJs',
+          'Blazor',
           '.NET',
           'Python',
           'Flask',
@@ -83,12 +83,8 @@ class SkillsScreen extends StatelessWidget {
         tools: ['Flutter', 'Winforms', 'WPF', 'JavaFx', 'C#'],
       ),
       Skill(
-        name: 'Desktop Development',
-        tools: ['Flutter', 'Winforms', 'WPF', 'JavaFx', 'C#'],
-      ),
-      Skill(
         name: 'Machine Learning',
-        tools: ['Python', 'Google Colab', 'Jupyter Notebook',],
+        tools: ['Python', 'Google Colab', 'Jupyter Notebook'],
       ),
     ];
 

@@ -146,10 +146,10 @@ class ProjectsScreenLayout extends StatelessWidget {
       ProjectModel(
         title: 'AssesFlow',
         description:
-        'Comprehensive desktop application for managing student records,'
+            'Comprehensive desktop application for managing student records,'
             ' course scheduling, and academic workflows',
-        categories: ['UI/UX', 'Web', 'All','Mobile','Desktop'],
-        technologies: ['Figma', 'Flutter', 'Spring Boot',],
+        categories: ['UI/UX', 'Web', 'All', 'Mobile', 'Desktop'],
+        technologies: ['Figma', 'Flutter', 'Spring Boot'],
         imageUrl: '',
         githubUrl: 'https://github.com/OGZod/AssessFlow',
         status: ProjectStatus.inProgress,
@@ -157,33 +157,44 @@ class ProjectsScreenLayout extends StatelessWidget {
       ProjectModel(
         title: 'BakeEat',
         description:
-        'A social application aimed at promoting pastries by creating fun environment'
+            'A social application aimed at promoting pastries by creating fun environment'
             ' wherein pastry makers can share their work and get engagements from clients easily.',
-        categories: ['UI/UX', 'Web', 'All','Mobile','Desktop'],
+        categories: ['UI/UX', 'Web', 'All', 'Mobile', 'Desktop'],
         technologies: ['Figma', 'Flutter', 'Firebase'],
         imageUrl: '',
         githubUrl: 'https://github.com/OGZod/BakeEat_Mobile',
         status: ProjectStatus.inProgress,
       ),
       ProjectModel(
-          title: 'Buzme',
-          description:
-          'Buzme is Africa\'s trusted online marketplace featuring secure '
-              'escrow payments, business tools, and logistics.'
-              ' Buy safely and sell confidently.',
-          categories: ['Mobile', 'All'],
-          technologies: ['Flutter', 'Firebase', 'NodeJS'],
-          imageUrl: '',
-          status: ProjectStatus.completed,
-          role: 'Fullstack developer',
-          liveUrl: 'https://play.google.com/store/apps/details?id=com.dohtechsolutions.buzme'
+        title: 'Buzme',
+        description:
+            'Buzme is Africa\'s trusted online marketplace featuring secure '
+            'escrow payments, business tools, and logistics.'
+            ' Buy safely and sell confidently.',
+        categories: ['Mobile', 'All'],
+        technologies: ['Flutter', 'Firebase', 'NodeJS'],
+        imageUrl: '',
+        status: ProjectStatus.completed,
+        role: 'Fullstack developer',
+        liveUrl:
+            'https://play.google.com/store/apps/details?id=com.dohtechsolutions.buzme',
       ),
       ProjectModel(
         title: 'Buzsmart',
         description:
-        'Buzsmart is a revolutionary marketplace that bridges the gap between'
+            'Buzsmart is a revolutionary marketplace that bridges the gap between'
             ' people living abroad and the authentic tastes of their home countries. '
             'We connect you with local stores that stock.',
+        categories: ['All', 'Mobile'],
+        technologies: ['Flutter', 'TypeScript', 'PostgreSQL'],
+        imageUrl: 'assets/images/project5.png',
+        role: 'Frontend developer',
+        status: ProjectStatus.inProgress,
+      ),
+      ProjectModel(
+        title: 'Buzsmart Delivery',
+        description:
+            'Delivery app for Buzsmart with turn by turn navigation for delivery agents to follow',
         categories: ['All', 'Mobile'],
         technologies: ['Flutter', 'TypeScript', 'PostgreSQL'],
         imageUrl: 'assets/images/project5.png',
@@ -194,9 +205,9 @@ class ProjectsScreenLayout extends StatelessWidget {
         title: 'Ajuoza',
         description:
             'Ajuoza Is the App to find your lost love ones and your important documents.'
-                ' It also help you to secure your family members and check if your important document is already available at the police',
+            ' It also help you to secure your family members and check if your important document is already available at the police',
         categories: ['Mobile', 'All'],
-        technologies: ['Flutter', 'Firebase',],
+        technologies: ['Flutter', 'Firebase'],
         imageUrl: '',
         status: ProjectStatus.archived,
       ),
@@ -204,9 +215,9 @@ class ProjectsScreenLayout extends StatelessWidget {
         title: 'Binary Segmentation of Echocardiograms',
         description:
             'Trained a hybrid model that combined UNET, LadderNet and ResNet features to accurately'
-                'predict echocardiograms and in so doing help distinguish between useful and non useful echocardiograms',
+            'predict echocardiograms and in so doing help distinguish between useful and non useful echocardiograms',
         categories: ['Web', 'Machine Learning', 'All'],
-        technologies: ['Flask', 'Python', 'TensorFlow',],
+        technologies: ['Flask', 'Python', 'TensorFlow'],
         imageUrl: '',
         status: ProjectStatus.completed,
       ),
