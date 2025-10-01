@@ -4,7 +4,6 @@ import '../../../../../constants/app_text_styles.dart';
 import '../../../../functions/helpers.dart';
 import '../animated_section_wrapper.dart';
 
-
 class AboutMeSection extends StatelessWidget {
   final LayoutType layoutType;
 
@@ -33,7 +32,7 @@ class AboutMeSection extends StatelessWidget {
           children: [
             _buildSectionHeader(
               context,
-              Icons.psychology_rounded,
+              Icons.engineering_rounded,
               'Passion-Driven Engineer',
               AppColors.primary,
             ),
@@ -41,6 +40,18 @@ class AboutMeSection extends StatelessWidget {
             _buildDescription(
               context,
               'With a Master\'s in Engineering from the University of Buea, I blend academic rigor with practical innovation. My approach to software engineering is rooted in creating solutions that not only meet technical requirements but also deliver exceptional user experiences.',
+            ),
+            const SizedBox(height: 20),
+            _buildSectionHeader(
+              context,
+              Icons.psychology_rounded,
+              'Entrepreneur',
+              AppColors.primary,
+            ),
+            const SizedBox(height: 16),
+            _buildDescription(
+              context,
+              'As co-founder of BakeEat and AssessFlow, I see the need to provide solutions to problems in our emerging society. AssessFlow provides a solution for lecturers to continually evaluate students. BakeEat is a social platform for everyone',
             ),
             const SizedBox(height: 20),
             _buildSectionHeader(
