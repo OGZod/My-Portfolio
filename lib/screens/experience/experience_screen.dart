@@ -48,6 +48,13 @@ class ExperienceScreen extends StatelessWidget {
     final experiences = [
       Experience(
         position: 'Part-time Lecturer',
+        company: 'BIAKA University, Buea',
+        period: 'October 2025 - Present',
+        description:
+            'Deliver lectures on engineering related courses under the School of Engineering. ',
+      ),
+      Experience(
+        position: 'Part-time Lecturer',
         company: 'HIBES, Buea',
         period: '2024 - Present',
         description:
