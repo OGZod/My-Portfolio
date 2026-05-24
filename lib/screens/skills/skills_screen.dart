@@ -55,6 +55,9 @@ class SkillsScreen extends StatelessWidget {
         tools: [
           'Flutter',
           'Dart',
+          'Jetpack Compose',
+          "Kotlin",
+          "Java",
           'Firebase',
           'Spring Boot',
           'NodeJs',

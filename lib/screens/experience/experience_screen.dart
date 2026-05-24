@@ -47,9 +47,22 @@ class ExperienceScreen extends StatelessWidget {
   Widget _buildExperienceTimeline(bool isDarkMode) {
     final experiences = [
       Experience(
+        position: 'Mobile Software Engineer - Android',
+        company: 'AfroVisioN Group LTD, Buea',
+        period: '2026 - Present',
+        description: "Designing, developing, testing, and maintaining Android mobile applications. Collaborating with backend and product teams to deliver high-quality solutions"
+      ),
+      Experience(
+        position: 'Fullstack Developer',
+        company: 'Dohtech Solutions, Remote',
+        period: '2023 - 2026',
+        description:
+        'Contributed to mobile and web applications like Buzme, an e-commerce platform available on Play Store and App Store, enhancing functionality and user experience.',
+      ),
+      Experience(
         position: 'Part-time Lecturer',
         company: 'BIAKA University, Buea',
-        period: 'October 2025 - Present',
+        period: '2025 - Present',
         description:
             'Deliver lectures on engineering related courses under the School of Engineering. ',
       ),
@@ -66,13 +79,6 @@ class ExperienceScreen extends StatelessWidget {
         period: '2024 - Present',
         description:
             'Teach engineering-related courses, fostering critical thinking and problem-solving skills in students through hands-on projects and theoretical instruction.',
-      ),
-      Experience(
-        position: 'Fullstack Developer',
-        company: 'Dohtech Solutions, Remote',
-        period: '2023 - Present',
-        description:
-            'Contribute to mobile and web applications like Buzme, an e-commerce platform available on Play Store and App Store, enhancing functionality and user experience.',
       ),
       Experience(
         position: 'Part-time Lecturer',

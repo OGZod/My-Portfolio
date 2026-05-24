@@ -144,14 +144,38 @@ class ProjectsScreenLayout extends StatelessWidget {
   List<ProjectModel> _getAllProjects() {
     return [
       ProjectModel(
-        title: 'AssesFlow',
+        title: 'Ann\'Tithe',
         description:
-            'Comprehensive desktop application for managing student records,'
-            ' course scheduling, and academic workflows',
-        categories: ['UI/UX', 'Web', 'All', 'Mobile', 'Desktop'],
+            "AnnTithe is a comprehensive eCommerce application designed to provide a seamless and reliable shopping experience."
+                " The platform enables users to discover, compare, and purchase products across a wide range of categories, all within an intuitive and user-friendly interface.",
+        categories: ['UI/UX', 'All', 'Mobile', ],
         technologies: ['Figma', 'Flutter', 'Spring Boot'],
-        imageUrl: 'https://lh3.googleusercontent.com/vJycXzGDqq0UgkR9Q8R-mHVPF8ioniInz9amzw06d0nzmOT8xOVtuoHyx9qtV8p5giNoggeVqm5lRqBAzNgO',
-        liveUrl: 'https://play.google.com/store/apps/details?id=com.ogZod.assessflow',
+        imageUrl:
+            'https://lh3.googleusercontent.com/WmLk51TO0DSF25KvajVOnKC0jxL7iIfJr1I-Hwvc74oP_qHJ3K14e0BTlKvIq2oS2ofYSzUkmmzNjY4pXE13Jg',
+        status: ProjectStatus.inProgress,
+      ),
+      ProjectModel(
+        title: 'Quesa',
+        description:
+            "An application to help GCE students access past questions and their solutions.",
+        categories: ['All','Mobile',],
+        technologies: ['Flutter', 'Firebase', "Laravel"],
+        liveUrl: "https://play.google.com/store/apps/details?id=com.lambdaa.quesa",
+        role: "Mobile Developer",
+        imageUrl:
+            'https://play-lh.googleusercontent.com/o3DorRD7MMNyHe5b8GFqKHOmLt0oG8WLehw0lfduNxakwG7EDjkpiMRuLUeqc3YVYTA=w480-h960-rw',
+        status: ProjectStatus.completed,
+      ),
+      ProjectModel(
+        title: 'AssessFlow',
+        description:
+            'Comprehensive application for continuous student assessment and roll call',
+        categories: ['UI/UX', 'Web', 'All', 'Mobile', 'Desktop'],
+        technologies: ['Figma', 'Flutter', 'Firebase'],
+        imageUrl:
+            'https://lh3.googleusercontent.com/vJycXzGDqq0UgkR9Q8R-mHVPF8ioniInz9amzw06d0nzmOT8xOVtuoHyx9qtV8p5giNoggeVqm5lRqBAzNgO',
+        liveUrl:
+            'https://play.google.com/store/apps/details?id=com.ogZod.assessflow',
         status: ProjectStatus.completed,
       ),
       ProjectModel(
@@ -160,9 +184,11 @@ class ProjectsScreenLayout extends StatelessWidget {
             'A social application aimed at promoting pastries by creating fun environment'
             ' wherein pastry makers can share their work and get engagements from clients easily.',
         categories: ['UI/UX', 'Web', 'All', 'Mobile', 'Desktop'],
-        technologies: ['Figma', 'Flutter', 'Firebase'],
-        imageUrl: 'https://lh3.googleusercontent.com/UVwsrkduge5MfzD80IDD-A_-Jtgz05Msx7i7Eux0mvOXkt68f2YC_L11-yvujPY8LuT1N9QM2Q0pXnb3OBQ4zA',
-        liveUrl: 'https://play.google.com/store/apps/details?id=com.ogZod.bakeEat',
+        technologies: ['Figma', 'Flutter', 'Firebase, SpringBoot'],
+        imageUrl:
+            'https://lh3.googleusercontent.com/UVwsrkduge5MfzD80IDD-A_-Jtgz05Msx7i7Eux0mvOXkt68f2YC_L11-yvujPY8LuT1N9QM2Q0pXnb3OBQ4zA',
+        liveUrl:
+            'https://play.google.com/store/apps/details?id=com.ogZod.bakeEat',
         status: ProjectStatus.completed,
       ),
       ProjectModel(
@@ -180,15 +206,16 @@ class ProjectsScreenLayout extends StatelessWidget {
             'https://play.google.com/store/apps/details?id=com.dohtechsolutions.buzme',
       ),
       ProjectModel(
-        title: 'Buzsmart',
+        title: 'Buzsmart Immigration Marketplace',
         description:
             'Buzsmart is a revolutionary marketplace that bridges the gap between'
             ' people living abroad and the authentic tastes of their home countries. '
             'We connect you with local stores that stock.',
         categories: ['All', 'Mobile'],
         technologies: ['Flutter', 'TypeScript', 'PostgreSQL'],
-        imageUrl: 'assets/images/project5.png',
+        imageUrl: 'https://play-lh.googleusercontent.com/SCDPi2uvPJ-cKCgtTiATOm441xhjsLJXXkSHhDEbLUn-dOylhWJCP_Tz5h2fy5QTmNU=w480-h960-rw',
         role: 'Frontend developer',
+        liveUrl: "https://play.google.com/store/apps/details?id=com.dohtechsolutions.buzsmart",
         status: ProjectStatus.inProgress,
       ),
       ProjectModel(

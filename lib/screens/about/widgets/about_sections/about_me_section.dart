@@ -51,7 +51,7 @@ class AboutMeSection extends StatelessWidget {
             const SizedBox(height: 16),
             _buildDescription(
               context,
-              'As co-founder of BakeEat and AssessFlow, I see the need to provide solutions to problems in our emerging society. AssessFlow provides a solution for lecturers to continually evaluate students. BakeEat is a social platform for everyone',
+              'As founder of AssessFlow and co-founder of BakeEat, I see the need to provide solutions to problems in our emerging society. AssessFlow provides a solution for lecturers to continually evaluate students. BakeEat is a social platform for everyone',
             ),
             const SizedBox(height: 20),
             _buildSectionHeader(
