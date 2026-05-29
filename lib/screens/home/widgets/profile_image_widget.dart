@@ -30,7 +30,7 @@ class ProfileImageWidget extends StatelessWidget {
           size: size,
           isDarkMode: isDarkMode,
           imageUrl: imageUrl ?? 
-              'https://pbs.twimg.com/profile_images/1640246277932822529/mBeTDZje.jpg',
+              'https://avatars.githubusercontent.com/u/121359450?v=4',
         ),
       ],
     );
