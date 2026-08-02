@@ -224,7 +224,7 @@ class ProjectsScreenLayout extends StatelessWidget {
             'Delivery app for Buzsmart with turn by turn navigation for delivery agents to follow',
         categories: ['All', 'Mobile'],
         technologies: ['Flutter', 'TypeScript', 'PostgreSQL'],
-        imageUrl: 'assets/images/project5.png',
+        imageUrl: '',
         role: 'Frontend developer',
         status: ProjectStatus.inProgress,
       ),
